@@ -1,78 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TaskFlow</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TaskFlow - Get things done</title>
+  <meta name="description" content="Plan your day, set priorities, and track your progress with TaskFlow.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header class="nav" id="siteNav">
+    <div class="container nav-inner">
+      <a class="logo" href="index.html">
+        <span class="logo-mark" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg>
+        </span>
+        TaskFlow
+      </a>
 
-  <header class="navbar">
-    <a href="#" class="logo">
-      <svg class="logo-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
-        <polyline points="8 11 12 15 21 5"/>
-      </svg>
-      <span>TaskFlow</span>
-    </a>
-    <nav class="nav-links" aria-label="Main">
-      <a href="#" class="active">Home</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-    </nav>
-    <div class="nav-actions">
-      <a href="#" class="btn btn-outline">Log in</a>
-      <a href="#" class="btn btn-primary">Sign up</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+        <svg class="icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+
+      <div class="nav-menu" id="navMenu">
+        <nav class="links" aria-label="Main">
+          <a class="active" href="index.html" aria-current="page">Home</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="actions">
+          <button class="btn" type="button" data-toast="The login page is not built yet.">Log in</button>
+          <button class="btn primary" type="button" data-toast="The sign up page is not built yet.">Sign up</button>
+        </div>
+      </div>
     </div>
   </header>
-  <main class="hero">
-    <section class="hero-text">
-      <span class="badge">Free to start</span>
-      <h1>Get things done, one task at a time</h1>
-      <p>Plan your day, set priorities, and track progress in a clean workspace that stays out of your way.</p>
-      <div class="hero-buttons">
-        <a href="#" class="btn btn-primary btn-lg">Start your list</a>
-        <a href="#" class="btn btn-outline btn-lg">See how it works</a>
+
+  <main>
+    <!-- ===== Hero + task list ===== -->
+    <section class="container hero">
+      <div class="hero-text">
+        <span class="badge">Free to start</span>
+        <h1>Get things done, one task at a time</h1>
+        <p class="lead">Plan your day, set priorities, and track your progress in a clean workspace that stays out of your way.</p>
+        <div class="cta">
+          <button class="btn primary big" type="button" id="startBtn">Start your list</button>
+          <button class="btn big" type="button" id="howBtn">See how it works</button>
+        </div>
+        <p class="proof">Trusted by 50,000+ people planning their day</p>
+      </div>
+
+      <div class="panel" id="todoPanel">
+        <div class="panel-head">
+          <h2>Today</h2>
+          <span id="counter">0 of 0 done</span>
+        </div>
+        <div class="bar" id="bar" role="progressbar" aria-label="Tasks completed" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <i id="barFill"></i>
+        </div>
+
+        <ul class="tasks" id="taskList"></ul>
+        <p class="empty" id="emptyMsg" hidden>No tasks yet. Add your first one below.</p>
+
+        <form class="add" id="addForm" novalidate>
+          <input id="taskInput" type="text" placeholder="Add a new task..." maxlength="80" autocomplete="off" aria-label="New task">
+          <select id="prioritySelect" aria-label="Priority">
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+            <option value="low">Low</option>
+          </select>
+          <button class="btn primary" type="submit">Add</button>
+        </form>
+        <p class="error" id="formError" role="alert" hidden>Enter a task first.</p>
       </div>
     </section>
-    <section class="task-card" aria-label="Today's tasks">
-      <div class="card-header">
-        <h2>Today</h2>
-        <span class="progress-text">2 of 5 done</span>
-      </div>
-      <div class="progress-bar">
-        <div class="progress-fill"></div>
-      </div>
-      <ul class="task-list">
-        <li class="task done">
-          <svg class="check" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="10"/>
-            <polyline points="8 12 11 15 16 9"/>
-          </svg>
-          <span class="task-name">Review project brief</span>
-        </li>
-        <li class="task done">
-          <svg class="check" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="10"/>
-            <polyline points="8 12 11 15 16 9"/>
-          </svg>
-          <span class="task-name">Reply to client emails</span>
-        </li>
-        <li class="task">
-          <span class="circle"></span>
-          <span class="task-name">Design landing page</span>
-          <span class="tag tag-high">High</span>
-        </li>
-        <li class="task">
-          <span class="circle"></span>
-          <span class="task-name">Team standup at 3 PM</span>
-          <span class="tag tag-medium">Medium</span>
-        </li>
-      </ul>
+
+    <!-- ===== Features ===== -->
+    <section class="container features" id="features">
+      <article class="feat">
+        <div class="ico" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4m0 0h11l-2 4 2 4H5"/></svg>
+        </div>
+        <h3>Priorities</h3>
+        <p>Mark what matters most so the important work always rises to the top of your list.</p>
+      </article>
+      <article class="feat">
+        <div class="ico" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+        </div>
+        <h3>Due dates</h3>
+        <p>Set deadlines and get a clear view of what is coming up so nothing slips through.</p>
+      </article>
+      <article class="feat">
+        <div class="ico" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+        </div>
+        <h3>Categories</h3>
+        <p>Group tasks by project, area, or person to keep work and life neatly organized.</p>
+      </article>
+      <article class="feat">
+        <div class="ico" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>
+        </div>
+        <h3>Saved automatically</h3>
+        <p>Your list is stored as you type, so it is always there when you come back.</p>
+      </article>
     </section>
   </main>
-  <div class="pop">
-  </div>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>&copy; <span id="year">2026</span> TaskFlow. All rights reserved.</span>
+      <span class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </span>
+    </div>
+  </footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="script.js" defer></script>
 </body>
 </html>
