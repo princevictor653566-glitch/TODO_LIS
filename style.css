@@ -1,9 +1,7 @@
-/* =========================================================
-   TaskFlow - Home page styles
-   Responsive breakpoint: 768px (and a small tweak at 480px)
-   ========================================================= */
 
-/* ---------- 1. Colors (change these to re-theme the site) ---------- */
+
+
+
 :root {
   --color-page:         #f8f7f8;  
   --color-soft:         #f6f7f9;  
@@ -353,6 +351,171 @@ h1 {
 .toast.show { opacity: 1; transform: translate(-50%, 0); }
 
 
+.later{
+  height: 100px;
+  width: 100%;
+  background-color: #e4e6eb;
+  display:flex;
+  justify-content: center;
+
+  
+}
+
+
+:root {
+  --plum: #4a1742;
+  --ink: #2b1a29;
+  --button: #872060;
+  --button-dark: #6b1849;
+  --gap: clamp(28px, 4.5vw, 72px);
+  --font: "Montserrat", "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--ink);
+  background: #fff;
+}
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+/* ---------- Layout ---------- */
+.demos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--gap);
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: clamp(32px, 6vw, 72px) clamp(16px, 4vw, 56px);
+}
+
+.demo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* ---------- Monitor (all sizes are percentages, so it scales with the column) ---------- */
+.monitor { width: 100%; max-width: 460px; }
+
+.bezel {
+  background: #0d0d0f;
+  border-radius: 14px 14px 0 0;
+  padding: 3.4% 4.4% 0;
+}
+
+.screen {
+  aspect-ratio: 16 / 9;
+  background: #fff;
+  overflow: hidden;
+}
+.screen img {
+  display: block; width: 100%; height: 100%;
+  object-fit: cover; object-position: top;
+}
+
+.chin {
+  aspect-ratio: 446 / 40;
+  background: linear-gradient(#dddce1, #c4c3c9);
+  border-radius: 0 0 14px 14px;
+}
+
+.neck {
+  width: 27%;
+  aspect-ratio: 120 / 50;
+  margin: 0 auto;
+  background: linear-gradient(90deg, #b3b2b8, #ecebef 35%, #d8d7dc 65%, #b0afb5);
+  clip-path: polygon(14% 0, 86% 0, 100% 100%, 0 100%);
+}
+
+.base {
+  width: 36%;
+  height: clamp(6px, 1.3vw, 9px);
+  margin: 0 auto;
+  background: linear-gradient(#d7d6db, #a9a8ae);
+  border-radius: 0 0 50% 50% / 0 0 100% 100%;
+}
+
+.shadow {
+  height: clamp(10px, 2.4vw, 16px);
+  margin-top: -2px;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.32), transparent 70%);
+  filter: blur(4px);
+}
+
+/* ---------- Drawn website preview inside the screen ----------
+   Only needed for the CSS-drawn version. Delete this block if you use <img> screenshots. */
+.site { display: flex; flex-direction: column; height: 100%; background: #fff; }
+
+.site-nav {
+  flex: 0 0 11%; display: flex; align-items: center; gap: 3%;
+  padding: 0 4%; background: #fff;
+}
+.site-nav .logo { margin-right: auto; width: 16%; height: 3px; background: #444; border-radius: 2px; }
+.site-nav .dash { width: 6%; height: 2px; background: #b9b9be; border-radius: 2px; }
+
+.site-hero {
+  flex: 0 0 40%; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 6px;
+  background: var(--hero);
+}
+.site-hero .bar { display: block; height: 4px; border-radius: 2px; background: rgba(255, 255, 255, 0.92); }
+.bar-lg { width: 46%; }
+.bar-sm { width: 28%; opacity: 0.75; }
+
+.site-tiles {
+  flex: 1; display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 4%; padding: 5% 7% 0;
+}
+.site-tiles span { border-radius: 3px 3px 0 0; }
+.site-tiles span:nth-child(1) { background: var(--t1); }
+.site-tiles span:nth-child(2) { background: var(--t2); }
+.site-tiles span:nth-child(3) { background: var(--t3); }
+
+/* ---------- Text + button ---------- */
+.demo h3 {
+  margin: clamp(24px, 3.6vw, 52px) 0 clamp(14px, 1.8vw, 24px);
+  font-weight: 400;
+  font-size: clamp(22px, 2.1vw, 28px);
+  letter-spacing: 0.05em;
+  color: var(--plum);
+}
+
+.demo p {
+  margin: 0 0 clamp(28px, 3.6vw, 48px);
+  max-width: 34ch;
+  font-weight: 400;
+  font-size: clamp(16px, 1.45vw, 20px);
+  line-height: 1.75;
+  letter-spacing: 0.07em;
+}
+
+.demo-btn {
+  margin-top: auto; /* pushes all three buttons to the same line */
+  display: inline-block;
+  padding: 0.75em 1.7em;
+  background: var(--button);
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: clamp(17px, 1.65vw, 23px);
+  letter-spacing: 0.08em;
+  transition: background-color 0.2s;
+}
+.demo-btn:hover { background: var(--button-dark); }
+.demo-btn:focus-visible { outline: 3px solid var(--plum); outline-offset: 3px; }
+
+
+
+
 @media (max-width: 768px) {
   .container { padding-left: 20px; padding-right: 20px; }
   .menu-btn { display: inline-flex; }
@@ -392,6 +555,16 @@ h1 {
   }
 
   .footer-inner { flex-direction: column; }
+
+
+  .demos { grid-template-columns: minmax(0, 1fr); gap: 56px; }
+  .demo,
+  .demo:last-child {
+    grid-column: auto;
+    justify-self: center;
+    width: 100%;
+    max-width: 480px;
+  } 
 }
 
 
@@ -405,8 +578,3 @@ h1 {
   .add select { flex: 1; }
 }
 
-/* 
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  * { transition: none !important; }
-} */
