@@ -5,19 +5,19 @@
 
 /* ---------- 1. Colors (change these to re-theme the site) ---------- */
 :root {
-  --color-page:         #ffffff;  /* page background */
-  --color-soft:         #f6f7f9;  /* panels and cards */
-  --color-border:       #e4e6eb;  /* lines and outlines */
+  --color-page:         #f8f7f8;  
+  --color-soft:         #f6f7f9;  
+  --color-border:       #e4e6eb;  
 
-  --color-text:         #1c1f26;  /* main text */
-  --color-text-muted:   #5f6675;  /* secondary text */
-  --color-text-faint:   #6e7584;  /* captions and placeholders */
+  --color-text:         #1c1f26;  
+  --color-text-muted:   #5f6675;  
+  --color-text-faint:   #6e7584;  
 
-  --color-accent:       #2f6fed;  /* main blue */
+  --color-accent:       #155eee;  
   --color-accent-hover: #2459c9;
-  --color-accent-soft:  #e8f0fe;  /* light blue backgrounds */
+  --color-accent-soft:  #e8f0fe;  
 
-  --color-success:      #1f9d63;  /* completed check */
+  --color-success:      #1f9d63;  
 
   --color-high-bg:      #fdecec;  --color-high-text:   #b42323;
   --color-medium-bg:    #fff4dc;  --color-medium-text: #8a5a00;
@@ -27,9 +27,9 @@
 }
 
 /* ---------- 2. Base ---------- */
-*, *::before, *::after { box-sizing: border-box; }
-
-html { scroll-behavior: smooth; }
+/* *, *::before, *::after { box-sizing: border-box; } */
+/* 
+html { scroll-behavior: smooth; } */
 
 body {
   margin: 0;
@@ -127,7 +127,7 @@ button, input, select { font: inherit; color: inherit; }
 .actions { display: flex; gap: 10px; }
 
 .menu-btn {
-  display: none;               /* shown at 768px and below */
+  display: none;              
   margin-left: auto;
   padding: 6px;
   background: none;
@@ -139,7 +139,7 @@ button, input, select { font: inherit; color: inherit; }
 .menu-btn[aria-expanded="true"] .icon-open  { display: none; }
 .menu-btn[aria-expanded="true"] .icon-close { display: block; }
 
-/* ---------- 5. Hero ---------- */
+
 .hero {
   display: flex;
   align-items: center;
@@ -175,7 +175,6 @@ h1 {
 .cta { display: flex; flex-wrap: wrap; gap: 12px; }
 .proof { margin-top: 28px; font-size: 14px; color: var(--color-text-faint); }
 
-/* ---------- 6. Task panel ---------- */
 .panel {
   background: var(--color-soft);
   border: 1px solid var(--color-border);
@@ -294,8 +293,6 @@ h1 {
 .add .btn { height: 44px; border-radius: var(--radius); }
 
 .error { margin-top: 8px; font-size: 13px; color: var(--color-high-text); }
-
-/* ---------- 7. Features ---------- */
 .features {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -323,7 +320,6 @@ h1 {
 .feat h3 { font-size: 18px; margin-bottom: 6px; }
 .feat p { font-size: 14px; line-height: 1.55; color: var(--color-text-muted); }
 
-/* ---------- 8. Footer ---------- */
 .footer { border-top: 1px solid var(--color-border); }
 .footer-inner {
   display: flex;
@@ -337,7 +333,7 @@ h1 {
 .footer-links { display: flex; gap: 16px; }
 .footer-links a:hover { color: var(--color-text); }
 
-/* ---------- 9. Toast message ---------- */
+
 .toast {
   position: fixed;
   left: 50%;
@@ -356,13 +352,9 @@ h1 {
 }
 .toast.show { opacity: 1; transform: translate(-50%, 0); }
 
-/* =========================================================
-   RESPONSIVE: 768px and below (tablet and phone)
-   ========================================================= */
+
 @media (max-width: 768px) {
   .container { padding-left: 20px; padding-right: 20px; }
-
-  /* Navigation becomes a dropdown menu */
   .menu-btn { display: inline-flex; }
   .nav-menu {
     display: none;
@@ -382,7 +374,6 @@ h1 {
   .links a { padding: 14px 4px; border-bottom: 1px solid var(--color-border); }
   .actions .btn { flex: 1; padding: 12px 18px; }
 
-  /* Hero stacks: text first, task list below */
   .hero {
     flex-direction: column;
     align-items: stretch;
@@ -394,7 +385,7 @@ h1 {
   .lead { font-size: 16px; max-width: none; }
   .panel { padding: 18px; }
 
-  /* Features: 2 columns */
+
   .features {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     padding-bottom: 48px;
@@ -403,22 +394,19 @@ h1 {
   .footer-inner { flex-direction: column; }
 }
 
-/* =========================================================
-   Small phones: 480px and below
-   ========================================================= */
+
 @media (max-width: 480px) {
   h1 { font-size: 32px; }
   .cta .btn { flex: 1 1 100%; }
   .features { grid-template-columns: 1fr; }
 
-  /* Task input on its own row, priority + Add underneath */
   .add { flex-wrap: wrap; }
   .add input { flex: 1 1 100%; }
   .add select { flex: 1; }
 }
 
-/* Respect "reduce motion" settings */
+/* 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   * { transition: none !important; }
-}
+} */
