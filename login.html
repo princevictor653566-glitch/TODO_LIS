@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <main class="login-container">
+   
+    <div class="brand">
+      <div class="logo-icon-css">✓</div>
+      <span class="brand-name">TASK<span class="brand-accent">FLOW</span></span>
+    </div>
+
+    <h1 class="title">Log in to your account</h1>
+
+   
+    <form class="login-form" onsubmit="event.preventDefault();">
+      
+      <div class="form-group">
+        <label for="username">Email or Username</label>
+        <input 
+          type="text" 
+          id="username" 
+          placeholder="Enter Email or Username" 
+          required
+        >
+      </div>
+
+      
+      <div class="form-group">
+        <label for="password">Password</label>
+        <div class="password-wrapper">
+          <input 
+            type="password" 
+            id="password" 
+            placeholder="Enter Password" 
+            required
+          >
+          <button type="button" class="toggle-password" id="togglePassword" aria-label="Toggle password visibility">
+            <i class="fa-regular fa-eye-slash" id="eyeIcon"></i>
+          </button>
+        </div>
+      </div>
+
+     
+      <div class="forgot-wrapper">
+        <a href="#" class="forgot-link">Forgot Password?</a>
+      </div>
+
+      
+      <button type="submit" class="submit-btn">Log In</button>
+
+      
+      <p class="signup-text">
+        Don’t have an account? <a href="signup.html" class="signup-link">Sign up</a>
+      </p>
+
+    </form>
+  </main>
+</body>
+</html>
