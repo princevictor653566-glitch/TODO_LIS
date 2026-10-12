@@ -24,10 +24,6 @@
   --radius: 10px;
 }
 
-/* ---------- 2. Base ---------- */
-/* *, *::before, *::after { box-sizing: border-box; } */
-/* 
-html { scroll-behavior: smooth; } */
 
 body {
   margin: 0;
@@ -55,7 +51,6 @@ button, input, select { font: inherit; color: inherit; }
   padding-right: 40px;
 }
 
-/* ---------- 3. Buttons ---------- */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -516,6 +511,127 @@ body {
 
 
 
+.collection {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+/* ---------- Header ---------- */
+.collection-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 28px;
+}
+
+.collection-header h2 {
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+
+.see-all {
+  color: #a50f0f;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.see-all span {
+  margin-left: 8px;
+}
+
+/* ---------- Grid ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+/* ---------- Card ---------- */
+.card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #ececec;
+  padding: 1px;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+}
+
+.card img {
+  width: 100%;
+  height: 250px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+.card h3 {
+  margin: 14px 14px 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card .desc {
+  margin: 8px 14px 0;
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1.3;
+  text-align: center;
+  color: #777;
+}
+
+.card-footer {
+  margin-top: auto;
+  padding: 18px 22px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.price {
+  display: flex;
+  flex-direction: column;
+}
+
+.price small {
+  font-size: 1rem;
+}
+
+.price strong {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.card-footer button {
+  background: #a50f0f;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 22px;
+  font-family: inherit;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.card-footer button:hover {
+  background: #c01515;
+}
+
+
+
+
+
 @media (max-width: 768px) {
   .container { padding-left: 20px; padding-right: 20px; }
   .menu-btn { display: inline-flex; }
@@ -565,6 +681,12 @@ body {
     width: 100%;
     max-width: 480px;
   } 
+.grid { grid-template-columns: repeat(2, 1fr); }
+.grid{
+  flex-direction: column-reverse;
+ width: 100%;
+}
+
 }
 
 
