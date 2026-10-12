@@ -75,40 +75,25 @@ body {
   width: 100%;
 }
 
-.form-group {
-  margin-bottom: 20px;
-}
 
+.form-group input,
+.password-wrapper input {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 15px;
+  border: 1.5px solid #64748b; 
+  border-radius: 6px;
+  outline: none;
+  background-color: #ffffff;
+  margin-bottom: 24px;
+}
 .form-group label {
   display: block;
   font-family: 'Georgia', serif;
   font-size: 15px;
   color: var(--text-label);
-  margin-bottom: 8px;
+  margin-bottom: 12px; 
 }
-
-.form-group input {
-  width: 100%;
-  padding: 12px 14px;
-  font-size: 15px;
-  font-family: inherit;
-  color: #1e293b;
-  border: 1px solid var(--border-color);
-  border-radius: 6px;
-  outline: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.form-group input::placeholder {
-  color: var(--placeholder-color);
-}
-
-.form-group input:focus {
-  border-color: var(--border-focus);
-  box-shadow: 0 0 0 3px rgba(11, 138, 93, 0.12);
-}
-
-
 .password-wrapper {
   position: relative;
   display: flex;
@@ -127,12 +112,10 @@ body {
   color: #64748b;
   font-size: 16px;
   cursor: pointer;
-  padding: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: color 0.2s ease;
 }
+
+
+
 
 .toggle-password:hover {
   color: #334155;
@@ -141,12 +124,10 @@ body {
 
 .forgot-wrapper {
   text-align: right;
-  margin-top: -6px;
-  margin-bottom: 22px;
+  margin-top: 20px;
 }
 
 .forgot-link {
-  font-family: 'Georgia', serif;
   font-size: 14px;
   color: var(--primary-color);
   text-decoration: none;
