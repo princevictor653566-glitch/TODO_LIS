@@ -14,8 +14,7 @@ body {
   padding: 20px;
 }
 
-
-.login-container {
+#login-container {
   background: var(--card-bg);
   width: 100%;
   max-width: 440px;
@@ -28,7 +27,7 @@ body {
 }
 
 
-.brand {
+#brand {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -36,7 +35,7 @@ body {
 }
 
 
-.logo-icon-css {
+#logo-icon-css {
   width: 36px;
   height: 36px;
   background-color: rgba(11, 138, 93, 0.12);
@@ -49,19 +48,19 @@ body {
   justify-content: center;
 }
 
-.brand-name {
+#brand-name {
   font-weight: 800;
   font-size: 24px;
   letter-spacing: 0.5px;
   color: #1e293b;
 }
 
-.brand-accent {
+#brand-accent {
   color: var(--primary-color);
 }
 
 
-.title {
+#title {
   font-family: 'Georgia', serif;
   font-size: 22px;
   font-weight: 700;
@@ -71,13 +70,13 @@ body {
 }
 
 
-.login-form {
+#login-form {
   width: 100%;
 }
 
 
-.form-group input,
-.password-wrapper input {
+#form-group input,
+#password-wrapper input {
   width: 100%;
   padding: 12px 14px;
   font-size: 15px;
@@ -87,24 +86,24 @@ body {
   background-color: #ffffff;
   margin-bottom: 24px;
 }
-.form-group label {
+#form-group label {
   display: block;
   font-family: 'Georgia', serif;
   font-size: 15px;
   color: var(--text-label);
   margin-bottom: 12px; 
 }
-.password-wrapper {
+#password-wrapper {
   position: relative;
   display: flex;
   align-items: center;
 }
 
-.password-wrapper input {
+#password-wrapper input {
   padding-right: 42px;
 }
 
-.toggle-password {
+#toggle-password {
   position: absolute;
   right: 12px;
   background: none;
@@ -117,29 +116,29 @@ body {
 
 
 
-.toggle-password:hover {
+#toggle-password:hover {
   color: #334155;
 }
 
 
-.forgot-wrapper {
+#forgot-wrapper {
   text-align: right;
   margin-top: 20px;
 }
 
-.forgot-link {
+#forgot-link {
   font-size: 14px;
   color: var(--primary-color);
   text-decoration: none;
   transition: text-decoration 0.2s ease;
 }
 
-.forgot-link:hover {
+#forgot-link:hover {
   text-decoration: underline;
 }
 
 
-.submit-btn {
+#submit-btn {
   width: 100%;
   padding: 13px;
   background-color: var(--primary-color);
@@ -152,16 +151,16 @@ body {
   transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-.submit-btn:hover {
+#submit-btn:hover {
   background-color: var(--primary-hover);
 }
 
-.submit-btn:active {
+#submit-btn:active {
   transform: translateY(1px);
 }
 
 
-.signup-text {
+#signup-text {
   
   text-align: center;
   margin-top: 22px;
@@ -169,12 +168,12 @@ body {
   color: var(--text-label);
 }
 
-.signup-link {
+#signup-link {
   color: var(--primary-color);
   text-decoration: none;
   font-weight: 500;
 }
 
-.signup-link:hover {
+#signup-link:hover {
   text-decoration: underline;
 }
